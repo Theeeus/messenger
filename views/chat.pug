@@ -1,0 +1,61 @@
+doctype html
+html
+  head
+    title le messenger
+    // Bootstrap Core CSS
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='/css/style.css')
+    link(href='https://fonts.googleapis.com/css?family=VT323', rel='stylesheet')
+  body
+    .navbar
+      .navbarLeft.pull-left
+        a.logo(href='/') #le messenger
+      .navbarRight.pull-right
+        p.info.pull-right Welcome, #{name}. Room: #{room}
+    #chatPage
+      .row.main
+        .col-md-10.col-sm-9.col-xs-9.mainCont
+          ul#messages
+        .col-md-2.col-sm-3.col-xs-3.sideBar
+          div#userList
+      form#msgForm
+        input#m(autocomplete='off')
+        input#s(type='submit' value="Send")
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js')
+    script.
+      var socket = io('http://localhost:3000', {path: '/chat/socket.io'})
+      socket.emit('join', { name: '!{name}', room: '!{room}', action: '!{action}' });
+      document.getElementById('msgForm')
+      .addEventListener('submit', function (event) {
+        socket.emit('send', m.value);
+        document.getElementById('m').value = '';
+        event.preventDefault()
+      });
+      socket.on('chat', function(msg){
+        var node = document.createElement("LI");
+        var textnode = document.createTextNode(msg);
+        node.appendChild(textnode);
+        document.getElementById('messages').appendChild(node); //fazer função
+      });
+      socket.on('update', function(msg){
+        var node = document.createElement("LI");
+        var textnode = document.createTextNode(msg);
+        node.appendChild(textnode);
+        node.className = "announcements";
+        document.getElementById('messages').appendChild(node); 
+      });
+      socket.on('update-room', function(rooms){
+        var room = '!{room}';
+        for(var i=0;i<rooms.length;i++) {
+          if (rooms[i].name == room) {
+            document.getElementById('userList').innerHTML = '';
+            rooms[i].people.forEach(function(user){
+            var p = document.createElement('p');
+            var node = document.createTextNode(user);
+            p.appendChild(node);
+            document.getElementById('userList').appendChild(p);
+            })
+          }
+        }
+      });
+

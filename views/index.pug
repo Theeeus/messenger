@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title le messenger
+    // Bootstrap Core CSS
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='/css/style.css')    
+    link(href='https://fonts.googleapis.com/css?family=VT323', rel='stylesheet')
+  body
+    .navbar
+      .navbarLeft.pull-left
+        a.logo(href='/') #le messenger
+      .navbarRight.pull-right
+        a.about(href='/about') about
+    #formCont
+      form#joinForm(method="post",action="/enter")
+            p nickname
+            input.textInput(type="text",name="nickname", autocomplete='off' required)
+            // input(type='submit' value="Ok")
+            p do you want to create a new room or join an existing one?
+            input.radioInput(type='radio', name='action', value='join')
+            | join
+            input.radioInput(type='radio', name='action', value='create')
+            | create
+            p room name
+            input.textInput(type="text",name="room",autocomplete='off' required)
+            input#joinBtn.pull-right(type='submit' value="Go")
+    p#errorMsg=message
+    // script(src='https://code.jquery.com/jquery-3.2.1.js', integrity='sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=', crossorigin='anonymous')

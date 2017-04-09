@@ -1,0 +1,196 @@
+body {
+    font-family: 'VT323', monospace; 
+    background-color: rgba(0,0,0,1);
+    color: #006400;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    margin: 0 !important;
+    border: none;
+}
+
+.logo {
+    font-size: 40px;
+    margin-left: 30px;
+    line-height: 60px;
+    font-weight: bold;
+    color: #006400;
+}
+
+.logo:hover, .logo:active, .logo:focus, .about:hover, .about:active, .about:focus {
+    color: #006400;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.about {
+    font-size: 30px;
+    margin-right: 30px;
+    line-height: 60px;
+    color: #006400;
+}
+
+.info {
+    font-size: 20px;
+    margin-right: 30px;
+    line-height: 60px;
+    color: #006400;
+}
+
+/* Homepage */
+
+#formCont {
+    width: 400px;
+    height: 300px;
+    margin: 0;
+    padding: 18px;
+    border: 3px solid #006400;
+    border-radius: 5px;
+    position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
+#joinForm {
+    margin: 0;
+    padding: 0;
+}
+
+#joinForm p {
+    font-size: 22px;
+    margin: 0;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.textInput {
+    width: 100%;
+    padding-left: 5px;
+    border: none;
+    border-bottom: 1px solid #006400;
+    background: #000;
+}
+
+.textInput:focus, textarea:focus {
+    outline: none;
+}
+
+.radioInput {
+    display: inline-block;
+    width: 50px;
+}
+
+#joinBtn {
+    margin-top: 10px;
+    background: #000;
+    color: #006400;
+    border: 2px solid #006400;
+    border-radius: 5px;
+}
+
+#errorMsg {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 50px;
+    color: red;
+}
+
+/* /Homepage */
+
+/* Chat page */
+
+#chatPage { 
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    bottom: 0; 
+}
+
+.main {
+    margin: 0;
+    padding: 3px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 50px;
+}
+
+.mainCont, .sideBar {
+/*    border: 2px solid #006400; */
+    height: 100%;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.mainCont {
+    padding-left: 0;
+}
+
+.sideBar {
+    padding-right: 8px;
+}
+
+
+#messages, #userList {
+    border: 2px solid #006400;
+    height: 100%;
+}
+
+#userList {
+    padding-left: 10px;
+}
+
+#userList p {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
+
+#msgForm {
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+    padding: 3px;
+}
+
+
+#m { 
+    border: 2px solid #006400;
+    background: #000;
+    padding: 10px; 
+    width: 90%; 
+    margin-right: .5%; 
+}
+
+#m:focus {
+    outline: none;
+}
+
+#s { 
+    width: 9%; 
+    background: #000;
+    color: #006400; 
+    border: 2px solid #006400; 
+    padding: 10px; 
+}
+
+#messages { 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0;
+}
+
+#messages li { 
+    padding: 5px 10px; 
+    color: #006400;
+}
+
+.announcements { 
+    color: red !important; 
+}
