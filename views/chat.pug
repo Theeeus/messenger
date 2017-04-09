@@ -23,7 +23,7 @@ html
         input#s(type='submit' value="Send")
     script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js')
     script.
-      var socket = io('http://localhost:3000', {path: '/chat/socket.io'})
+      var socket = io('https://lemessenger.herokuapp.com', {path: '/chat/socket.io'})
       socket.emit('join', { name: '!{name}', room: '!{room}', action: '!{action}' });
       document.getElementById('msgForm')
       .addEventListener('submit', function (event) {
