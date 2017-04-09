@@ -64,7 +64,11 @@ io.on('connection', function(client){
         if (data.action === 'create') {
             rooms.push({ name : data.room, people : [data.name]});
         } else if (data.action === 'join') {
-            rooms[i].people.push(data.name);
+            for (var i=0;i<rooms.length;i++) {
+                if (rooms[i].name == data.room) {
+                    rooms[i].people.push(data.name);
+                }
+            }
         }
         io.to(data.room).emit('update-room', rooms);
     });
