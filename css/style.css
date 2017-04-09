@@ -194,3 +194,20 @@ body {
 .announcements { 
     color: red !important; 
 }
+
+@media (max-width: 500px) 
+{
+
+.info {
+    display: none;
+}
+
+#m {
+    width: 80%;
+}
+
+#s {
+    width: 19%;
+}
+
+}
