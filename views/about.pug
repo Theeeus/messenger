@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title le chat
+    title le messenger
     // Bootstrap Core CSS
     link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet')
     link(rel='stylesheet', href='/css/style.css')    
@@ -9,8 +9,21 @@ html
   body
     .navbar
       .navbarLeft.pull-left
-        a.logo(href='/') #le chat
+        a.logo(href='/') #le messenger
       .navbarRight.pull-right
         a.about(href='/about') about
     .aboutCont
-      p Hello World
+      h1 le messenger
+      p this is a messenger app built using Socket.io, Node.js, Express and Pugjs
+      h2 user Stories
+      ol
+        li
+          | I can pick a nickname and choose if I want to create a new chat room or join an existing one;
+        li
+          | I can't create a room with a name that's already taken or join a room that wasn't created before;
+        li
+          | If I open new tabs I can create different nicknames and simulate the behavior of more than one user using the chat;
+        li
+          | I get notified every time someone enters or leaves the room and get all the messages sent to the room I'm in.
+      h2 check on GitHub
+      a.sample(href="https://github.com/Theeeus/messenger", target="_blank") https://github.com/Theeeus/messenger
